@@ -3354,10 +3354,12 @@ ${this.isEnum ? `enum` : this.isStruct ? `struct` : this.isInterface ? `interfac
         if (randomSpawnGroupKey.isNull() || randomSpawnGroupPackKey.isNull()) {
           return;
         }
-        console.log("randomSpawnGroup:", randomSpawnGroupKey, randomSpawnGroupPackKey);
+        const randomSpawnGroupKey_str = randomSpawnGroupKey.content;
+        const randomSpawnGroupPackKey_str = randomSpawnGroupPackKey.content;
+        console.log("randomSpawnGroup:", randomSpawnGroupKey_str, randomSpawnGroupPackKey_str);
         send({
-          "randomSpawnGroupKey": randomSpawnGroupKey,
-          "randomSpawnGroupPackKey": randomSpawnGroupPackKey
+          "randomSpawnGroupKey": randomSpawnGroupKey_str,
+          "randomSpawnGroupPackKey": randomSpawnGroupPackKey_str
         });
       }
       Il2Cpp.domain.assembly("Assembly-CSharp").image.class("Torappu.Battle.Scheduler").method("_OnActionExecuted").implementation = function(data) {
