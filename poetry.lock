@@ -228,6 +228,30 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "frida"
+version = "17.9.1"
+description = "Dynamic instrumentation toolkit for developers, reverse-engineers, and security researchers"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "frida-17.9.1-cp37-abi3-macosx_10_13_x86_64.whl", hash = "sha256:21ed514da56a3cf6bd6064b117334528c9dd902512887f3f17032a3ba96aa1c7"},
+    {file = "frida-17.9.1-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:bbc552e2afb220f284719039bd061a39648ee39b58316e3d75226657c3b57404"},
+    {file = "frida-17.9.1-cp37-abi3-manylinux1_i686.whl", hash = "sha256:4c46c43f130d2c3b40f3c0c52e33d7455027c726a6e6d7c430710ffb851330f0"},
+    {file = "frida-17.9.1-cp37-abi3-manylinux1_x86_64.whl", hash = "sha256:d24df260e79ba354404f7307de55f80e9d0d50c393ba6d1255adfcea08c6bd62"},
+    {file = "frida-17.9.1-cp37-abi3-manylinux2014_aarch64.whl", hash = "sha256:a4461839e19769e4b3b799c0536dcdbb12ee46e26c37a9a6bf93cbd96efed717"},
+    {file = "frida-17.9.1-cp37-abi3-manylinux2014_armv7l.whl", hash = "sha256:3772b7b24731a64f5d13a8ac660d9e7d4a00ea07e2b461b242963c75b555e3fe"},
+    {file = "frida-17.9.1-cp37-abi3-manylinux_2_17_aarch64.whl", hash = "sha256:0d1fb3ed3aeb265368a1f68fe4a4371b4a2eb2e7bd7cf9ab179611657da4ab8a"},
+    {file = "frida-17.9.1-cp37-abi3-manylinux_2_17_armv7l.whl", hash = "sha256:e132df555925f1b0079d922d7f0c71011855b82e0925cc0a99caaeeff9d0b5bb"},
+    {file = "frida-17.9.1-cp37-abi3-manylinux_2_5_i686.whl", hash = "sha256:430d393501c68fc3413fe0b02dc3ded672f29a668264949c325bd90793b6a9e9"},
+    {file = "frida-17.9.1-cp37-abi3-manylinux_2_5_x86_64.whl", hash = "sha256:00114569655a0884ce6f590f053512b537392756d8830361001552492906c613"},
+    {file = "frida-17.9.1-cp37-abi3-win32.whl", hash = "sha256:8bcbf74167b7b6fd3810e939f416600a1e19ef09cb1cbe4282bab2058ff46d94"},
+    {file = "frida-17.9.1-cp37-abi3-win_amd64.whl", hash = "sha256:edb881085c686987cffb0503bc13b795f694de2ca4eed0a7526e22e5f16a8d14"},
+    {file = "frida-17.9.1-cp37-abi3-win_arm64.whl", hash = "sha256:519564df2f65ec6960387d190d02cad25784b093910d888488030cbea760015a"},
+    {file = "frida-17.9.1.tar.gz", hash = "sha256:93294cc26925dfcd8a54ff25bf5d1746e0bf1b9fadb1af106047e945000759e4"},
+]
+
+[[package]]
 name = "idna"
 version = "3.13"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -666,4 +690,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "4155e0c6d6f4100b70e9402a3cdf537d918d65cd7052fc6bb6d67819c5b5ae35"
+content-hash = "1c61919dda0da7048126e92f15e138e138a0320b54aaea3eab81271e088f888a"
