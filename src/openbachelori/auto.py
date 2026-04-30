@@ -1,7 +1,10 @@
 import time
+import traceback
+import sys
 
 import pyautogui
 import pygetwindow
+from elevate import elevate
 
 
 def try_to_click(region: tuple[int, int, int, int], btn_img_filepath: str) -> bool:
@@ -30,9 +33,14 @@ def oneshot():
 
 
 def main():
-    while True:
-        oneshot()
-        time.sleep(0.1)
+    try:
+        elevate()
+        while True:
+            oneshot()
+            time.sleep(0.1)
+    except Exception:
+        traceback.print_exc()
+        sys.stdin.read()
 
 
 if __name__ == "__main__":

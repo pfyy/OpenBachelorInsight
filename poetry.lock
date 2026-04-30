@@ -204,6 +204,17 @@ files = [
 markers = {main = "platform_system == \"Windows\"", dev = "sys_platform == \"win32\""}
 
 [[package]]
+name = "elevate"
+version = "0.1.3"
+description = "Python library for requesting root privileges"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "elevate-0.1.3.tar.gz", hash = "sha256:53ad19fa1de301fb1de3f8768fb3a5894215716fd96a475690c4d0ff3b1de209"},
+]
+
+[[package]]
 name = "flask"
 version = "3.1.3"
 description = "A simple framework for building complex web applications."
@@ -1099,4 +1110,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "fe62a505930c32f192147c64662bd2b3c39513fc8af3262a8160fe840c1c7aed"
+content-hash = "8adc56e8b9c7fa37c1f0bae11b7c1cee504e4bfcfb4fc7ffac594a6efa98bc15"
