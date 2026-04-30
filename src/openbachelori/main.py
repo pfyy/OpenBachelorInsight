@@ -20,6 +20,13 @@ def obi_begin():
     obi_state_dict = request.json
 
 
+@app.route("/obi/update", methods=["POST"])
+def obi_update():
+    global obi_state_dict
+
+    obi_state_dict.update(request.json)
+
+
 @app.route("/obi/end", methods=["POST"])
 def obi_end():
     global obi_state_dict
