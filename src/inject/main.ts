@@ -17,6 +17,11 @@ Il2Cpp.perform(
             }
 
             console.log("randomSpawnGroup:", randomSpawnGroupKey, randomSpawnGroupPackKey);
+
+            send({
+                "randomSpawnGroupKey": randomSpawnGroupKey,
+                "randomSpawnGroupPackKey": randomSpawnGroupPackKey,
+            })
         }
 
         Il2Cpp.domain.assembly("Assembly-CSharp").image.class("Torappu.Battle.Scheduler").method("_OnActionExecuted").implementation = function (data) {

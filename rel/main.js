@@ -3355,6 +3355,10 @@ ${this.isEnum ? `enum` : this.isStruct ? `struct` : this.isInterface ? `interfac
           return;
         }
         console.log("randomSpawnGroup:", randomSpawnGroupKey, randomSpawnGroupPackKey);
+        send({
+          "randomSpawnGroupKey": randomSpawnGroupKey,
+          "randomSpawnGroupPackKey": randomSpawnGroupPackKey
+        });
       }
       Il2Cpp.domain.assembly("Assembly-CSharp").image.class("Torappu.Battle.Scheduler").method("_OnActionExecuted").implementation = function(data) {
         check_data(data);
