@@ -17,12 +17,14 @@ obi_state_dict: dict = None
 @app.route("/obi/begin", methods=["POST"])
 def obi_begin():
     global obi_state_dict
-    obi_state_dict = {}
+    obi_state_dict = request.json
 
 
 @app.route("/obi/end", methods=["POST"])
 def obi_end():
     global obi_state_dict
+
+    obi_state_dict.update(request.json)
 
     with jsonlines.open("data/tmp.jsonl", mode="a") as writer:
         writer.write(obi_state_dict)
