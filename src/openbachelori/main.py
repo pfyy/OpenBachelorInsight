@@ -19,12 +19,16 @@ def obi_begin():
     global obi_state_dict
     obi_state_dict = request.json
 
+    return {}
+
 
 @app.route("/obi/update", methods=["POST"])
 def obi_update():
     global obi_state_dict
 
     obi_state_dict.update(request.json)
+
+    return {}
 
 
 @app.route("/obi/end", methods=["POST"])
@@ -37,6 +41,8 @@ def obi_end():
         writer.write(obi_state_dict)
 
     obi_state_dict = None
+
+    return {}
 
 
 if __name__ == "__main__":
