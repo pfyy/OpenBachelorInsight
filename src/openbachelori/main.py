@@ -46,4 +46,4 @@ def obi_end():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=7443, threaded=False, processes=1)
+    app.run(host="0.0.0.0", port=7443, debug=True, threaded=False, processes=1)
