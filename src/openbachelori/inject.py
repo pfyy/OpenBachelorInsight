@@ -2,10 +2,22 @@ from pathlib import Path
 import sys
 
 import frida
+import requests
 
 
 def script_on_message(message, data):
-    print(message)
+    randomSpawnGroupKey = message["payload"]["randomSpawnGroupKey"]
+    randomSpawnGroupPackKey = message["payload"]["randomSpawnGroupPackKey"]
+
+    device_id = f"{randomSpawnGroupKey}|{randomSpawnGroupPackKey}"
+
+    r = requests.post(
+        "http://127.0.0.1:7443/obi/update",
+        json={
+            device_id: True,
+        },
+    )
+    r.raise_for_status()
 
 
 def main():
