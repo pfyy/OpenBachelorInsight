@@ -14,6 +14,8 @@ def try_to_click(region: tuple[int, int, int, int], btn_img_filepath: str) -> bo
         )
     except pyautogui.ImageNotFoundException:
         return False
+    except ValueError:
+        return False
 
     pyautogui.click(left + width, top + height)
     return True
