@@ -9,13 +9,13 @@ from elevate import elevate
 
 def try_to_click(region: tuple[int, int, int, int], btn_img_filepath: str) -> bool:
     try:
-        x, y = pyautogui.locateCenterOnScreen(
+        left, top, width, height = pyautogui.locateOnScreen(
             btn_img_filepath, region=region, confidence=0.8
         )
     except pyautogui.ImageNotFoundException:
         return False
 
-    pyautogui.click(x, y)
+    pyautogui.click(left + width, top + height)
     return True
 
 
