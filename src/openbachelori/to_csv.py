@@ -41,6 +41,11 @@ def main():
             f"data/multiOperationMatch_act3enemyduel_01b_{i}.jsonl"
         ) as reader:
             for obj in reader:
+                device_vec = np.zeros(num_device, dtype=int)
+                for device_idx, device_id in enumerate(device_id_lst):
+                    if device_id in obj:
+                        device_vec[device_idx] = 1
+
                 for round_id in range(10):
                     count_vec = np.zeros(num_enemy + num_device + 1, dtype=int)
 
@@ -54,9 +59,7 @@ def main():
                         enemy_idx = enemy_id_dict[enemy_id]
                         count_vec[enemy_idx] = -enemy_cnt
 
-                    for device_idx, device_id in enumerate(device_id_lst):
-                        if device_id in obj:
-                            count_vec[num_enemy + device_idx] = 1
+                    count_vec[num_enemy : num_enemy + num_device] = device_vec
 
                     if obj[f"round_{round_id}_victor"] == 1:
                         count_vec[num_enemy + num_device] = 1
