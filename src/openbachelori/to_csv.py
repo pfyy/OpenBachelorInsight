@@ -34,7 +34,7 @@ def main():
     num_enemy = len(enemy_id_lst)
     num_device = len(device_id_lst)
 
-    count_vec_lst = []
+    sample_vec_lst = []
 
     for i in range(1, 13):
         with jsonlines.open(
@@ -47,32 +47,32 @@ def main():
                         device_vec[device_idx] = 1
 
                 for round_id in range(10):
-                    count_vec = np.zeros(num_enemy + num_device + 1, dtype=int)
+                    sample_vec = np.zeros(num_enemy + num_device + 1, dtype=int)
 
                     round_obj = obj["born_units"][round_id]
 
                     for enemy_id, enemy_cnt in round_obj["leftUnitIds"].items():
                         enemy_idx = enemy_id_dict[enemy_id]
-                        count_vec[enemy_idx] = enemy_cnt
+                        sample_vec[enemy_idx] = enemy_cnt
 
                     for enemy_id, enemy_cnt in round_obj["rightUnitIds"].items():
                         enemy_idx = enemy_id_dict[enemy_id]
-                        count_vec[enemy_idx] = -enemy_cnt
+                        sample_vec[enemy_idx] = -enemy_cnt
 
-                    count_vec[num_enemy : num_enemy + num_device] = device_vec
+                    sample_vec[num_enemy : num_enemy + num_device] = device_vec
 
                     if obj[f"round_{round_id}_victor"] == 1:
-                        count_vec[num_enemy + num_device] = 1
+                        sample_vec[num_enemy + num_device] = 1
                     elif obj[f"round_{round_id}_victor"] == 2:
-                        count_vec[num_enemy + num_device] = -1
+                        sample_vec[num_enemy + num_device] = -1
                     else:
-                        count_vec[num_enemy + num_device] = 0
+                        sample_vec[num_enemy + num_device] = 0
 
-                    count_vec_lst.append(count_vec)
+                    sample_vec_lst.append(sample_vec)
 
     column_name_lst = enemy_id_lst + device_id_lst + ["label"]
 
-    df = pd.DataFrame(count_vec_lst, columns=column_name_lst)
+    df = pd.DataFrame(sample_vec_lst, columns=column_name_lst)
 
     df.to_csv("csv/multiOperationMatch_act3enemyduel_01b.csv", index=False)
 
