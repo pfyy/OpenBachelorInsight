@@ -49,6 +49,8 @@ def main():
     )
     print(f"classification_report:\n{classification_report(y_test, y_pred)}")
 
+    clf.booster_.save_model("src/openbachelori/models/baseline_lgb/model.txt")
+
 
 if __name__ == "__main__":
     main()
