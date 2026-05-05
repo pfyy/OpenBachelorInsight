@@ -16,7 +16,7 @@ def script_on_message(message, data):
 
     y_pred = get_y_pred(payload)
 
-    print("y_pred:", y_pred)
+    print(f"y_pred: {y_pred:.4f}")
 
 
 def main():
