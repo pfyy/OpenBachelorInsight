@@ -35,6 +35,7 @@ def main():
     num_device = len(device_id_lst)
 
     sample_vec_lst = []
+    aug_vec_list = []
 
     for i in range(1, 15):
         with jsonlines.open(
@@ -62,11 +63,13 @@ def main():
                     sample_vec[num_enemy : num_enemy + num_device] = device_vec
 
                     if obj[f"round_{round_id}_victor"] == 1:
-                        sample_vec[num_enemy + num_device] = 1
+                        victor = 1
                     elif obj[f"round_{round_id}_victor"] == 2:
-                        sample_vec[num_enemy + num_device] = -1
+                        victor = -1
                     else:
-                        sample_vec[num_enemy + num_device] = 0
+                        victor = 0
+
+                    sample_vec[num_enemy + num_device] = victor
 
                     sample_vec_lst.append(sample_vec)
 
@@ -75,6 +78,10 @@ def main():
     df = pd.DataFrame(sample_vec_lst, columns=column_name_lst)
 
     df.to_csv("csv/multiOperationMatch_act3enemyduel_01b.csv", index=False)
+
+    df_aug = pd.DataFrame(aug_vec_list, columns=column_name_lst)
+
+    df_aug.to_csv("csv/multiOperationMatch_act3enemyduel_01b_aug.csv", index=False)
 
 
 if __name__ == "__main__":
