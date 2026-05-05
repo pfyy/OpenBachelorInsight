@@ -39,7 +39,10 @@ def print_metrics(clf: lgb.LGBMClassifier, X, y):
 
 
 def main():
-    df = pd.read_csv("csv/multiOperationMatch_act3enemyduel_01b.csv")
+    df_orig = pd.read_csv("csv/multiOperationMatch_act3enemyduel_01b.csv")
+    df_aug = pd.read_csv("csv/multiOperationMatch_act3enemyduel_01b_aug.csv")
+
+    df = pd.concat([df_orig, df_aug], axis=0, ignore_index=True)
 
     df["label"] = df["label"].replace(-1, 0)
 
