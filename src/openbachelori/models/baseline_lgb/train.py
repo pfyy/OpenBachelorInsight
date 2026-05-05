@@ -50,7 +50,12 @@ def main():
         X, y, test_size=0.1, random_state=42
     )
 
-    clf = lgb.LGBMClassifier(random_state=42)
+    clf = lgb.LGBMClassifier(
+        objective="binary",
+        random_state=42,
+        n_estimators=1000,
+        num_leaves=255,
+    )
     clf.fit(X_train, y_train)
 
     print_metrics(clf, X_train, y_train)
