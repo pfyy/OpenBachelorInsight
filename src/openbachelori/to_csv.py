@@ -12,7 +12,7 @@ def main():
     device_id_dict = {}
     device_id_lst = []
 
-    for i in range(1, 13):
+    for i in range(1, 15):
         with jsonlines.open(
             f"data/multiOperationMatch_act3enemyduel_01b_{i}.jsonl"
         ) as reader:
@@ -36,7 +36,7 @@ def main():
 
     sample_vec_lst = []
 
-    for i in range(1, 13):
+    for i in range(1, 15):
         with jsonlines.open(
             f"data/multiOperationMatch_act3enemyduel_01b_{i}.jsonl"
         ) as reader:
