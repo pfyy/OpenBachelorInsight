@@ -73,6 +73,30 @@ def main():
 
                     sample_vec_lst.append(sample_vec)
 
+                    survive_obj = obj["survive_units"][round_id]["unitIds"]
+                    if survive_obj and (victor == 1 or victor == -1):
+                        if victor == 1:
+                            victor_obj = round_obj["leftUnitIds"]
+                        else:
+                            victor_obj = round_obj["rightUnitIds"]
+
+                        has_casualty = False
+
+                        for enemy_id, enemy_cnt in victor_obj.items():
+                            if survive_obj.get(enemy_id, 0) < enemy_cnt:
+                                has_casualty = True
+                                break
+
+                        if has_casualty:
+                            aug_vec = sample_vec.copy()
+                            for enemy_id, enemy_cnt in survive_obj.items():
+                                enemy_idx = enemy_id_dict[enemy_id]
+                                aug_vec[enemy_idx] -= victor * enemy_cnt
+
+                            aug_vec[num_enemy + num_device] = -victor
+
+                            aug_vec_list.append(aug_vec)
+
     column_name_lst = enemy_id_lst + device_id_lst + ["label"]
 
     df = pd.DataFrame(sample_vec_lst, columns=column_name_lst)
