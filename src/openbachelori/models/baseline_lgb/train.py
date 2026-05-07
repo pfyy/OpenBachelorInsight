@@ -56,6 +56,8 @@ def main():
     gss = GroupShuffleSplit(n_splits=1, test_size=0.1, random_state=42)
     train_idx, test_idx = next(gss.split(X, y, groups=groups))
 
+    test_idx = test_idx[test_idx < len(df_orig)]
+
     X_train = X.iloc[train_idx]
     y_train = y.iloc[train_idx]
     X_test = X.iloc[test_idx]
