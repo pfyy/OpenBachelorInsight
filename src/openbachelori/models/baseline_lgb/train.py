@@ -12,8 +12,8 @@ from sklearn.metrics import (
 import lightgbm as lgb
 
 
-def print_metrics(clf: lgb.LGBMClassifier, X, y):
-    print("----------")
+def print_metrics(name, clf: lgb.LGBMClassifier, X, y, f):
+    print(f"---------- {name} ----------", file=f)
 
     y_pred = clf.predict(X)
     y_pred_proba = clf.predict_proba(X)[:, 1]
@@ -27,15 +27,13 @@ def print_metrics(clf: lgb.LGBMClassifier, X, y):
 
     cm = confusion_matrix(y, y_pred)
 
-    print("accuracy_score:", acc)
-    print("precision_score:", pre)
-    print("recall_score:", rec)
-    print("f1_score:", f1)
-    print("roc_auc_score:", auc)
-    print(
-        f"confusion_matrix:\n{cm}",
-    )
-    print(f"classification_report:\n{classification_report(y, y_pred)}")
+    print("accuracy_score:", acc, file=f)
+    print("precision_score:", pre, file=f)
+    print("recall_score:", rec, file=f)
+    print("f1_score:", f1, file=f)
+    print("roc_auc_score:", auc, file=f)
+    print(f"confusion_matrix:\n{cm}", file=f)
+    print(f"classification_report:\n{classification_report(y, y_pred)}", file=f)
 
 
 def main():
@@ -71,8 +69,9 @@ def main():
     )
     clf.fit(X_train, y_train)
 
-    print_metrics(clf, X_train, y_train)
-    print_metrics(clf, X_test, y_test)
+    with open("src/openbachelori/models/baseline_lgb/metrics.txt", "w") as f:
+        print_metrics("train", clf, X_train, y_train, f)
+        print_metrics("test", clf, X_test, y_test, f)
 
     clf.booster_.save_model("src/openbachelori/models/baseline_lgb/model.txt")
 
