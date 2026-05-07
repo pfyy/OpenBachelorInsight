@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GroupShuffleSplit
 from sklearn.metrics import (
     accuracy_score,
     precision_score,
@@ -42,16 +42,24 @@ def main():
     df_orig = pd.read_csv("csv/multiOperationMatch_act3enemyduel_01b.csv")
     df_aug = pd.read_csv("csv/multiOperationMatch_act3enemyduel_01b_aug.csv")
 
+    df_orig["group_id"] = df_orig.index
+
     df = pd.concat([df_orig, df_aug], axis=0, ignore_index=True)
+
+    groups = df["group_id"]
 
     df["label"] = df["label"].replace(-1, 0)
 
-    X = df.drop(columns=["label"])
+    X = df.drop(columns=["label", "group_id"])
     y = df["label"]
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.1, random_state=42
-    )
+    gss = GroupShuffleSplit(n_splits=1, test_size=0.1, random_state=42)
+    train_idx, test_idx = next(gss.split(X, y, groups=groups))
+
+    X_train = X.iloc[train_idx]
+    y_train = y.iloc[train_idx]
+    X_test = X.iloc[test_idx]
+    y_test = y.iloc[test_idx]
 
     clf = lgb.LGBMClassifier(
         objective="binary",
