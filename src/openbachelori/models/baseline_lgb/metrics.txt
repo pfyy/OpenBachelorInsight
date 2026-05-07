@@ -1,36 +1,36 @@
 ---------- train ----------
-accuracy_score: 0.9985487227011243
-precision_score: 0.9985656311223062
-recall_score: 0.9985306979184887
-f1_score: 0.9985481642148717
-roc_auc_score: 0.999985298443073
+accuracy_score: 0.9660610935287021
+precision_score: 0.9655762913259244
+recall_score: 0.9665558859541717
+f1_score: 0.9660658403118936
+roc_auc_score: 0.9951850906022045
 confusion_matrix:
-[[28565    41]
- [   42 28543]]
+[[27621   985]
+ [  956 27629]]
 classification_report:
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00     28606
-           1       1.00      1.00      1.00     28585
+           0       0.97      0.97      0.97     28606
+           1       0.97      0.97      0.97     28585
 
-    accuracy                           1.00     57191
-   macro avg       1.00      1.00      1.00     57191
-weighted avg       1.00      1.00      1.00     57191
+    accuracy                           0.97     57191
+   macro avg       0.97      0.97      0.97     57191
+weighted avg       0.97      0.97      0.97     57191
 
 ---------- test ----------
-accuracy_score: 0.8063115228720324
-precision_score: 0.7947303921568627
-recall_score: 0.7952176578786021
-f1_score: 0.7949739503524365
-roc_auc_score: 0.8918460653150206
+accuracy_score: 0.814128546612623
+precision_score: 0.8024464831804281
+recall_score: 0.8044144696505211
+f1_score: 0.8034292712798531
+roc_auc_score: 0.890169820668056
 confusion_matrix:
-[[1488  335]
- [ 334 1297]]
+[[1500  323]
+ [ 319 1312]]
 classification_report:
               precision    recall  f1-score   support
 
            0       0.82      0.82      0.82      1823
-           1       0.79      0.80      0.79      1631
+           1       0.80      0.80      0.80      1631
 
     accuracy                           0.81      3454
    macro avg       0.81      0.81      0.81      3454

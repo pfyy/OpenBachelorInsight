@@ -65,7 +65,7 @@ def main():
         objective="binary",
         random_state=42,
         n_estimators=1000,
-        num_leaves=255,
+        num_leaves=50,
     )
     clf.fit(X_train, y_train)
 
