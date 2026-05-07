@@ -71,6 +71,7 @@ def main():
 
                     sample_vec[num_enemy + num_device] = victor
 
+                    sample_vec_idx = len(sample_vec_lst)
                     sample_vec_lst.append(sample_vec)
 
                     survive_obj = obj["survive_units"][round_id]["unitIds"]
@@ -88,7 +89,7 @@ def main():
                                 break
 
                         if has_casualty:
-                            aug_vec = sample_vec.copy()
+                            aug_vec = np.append(sample_vec, sample_vec_idx)
                             for enemy_id, enemy_cnt in survive_obj.items():
                                 enemy_idx = enemy_id_dict[enemy_id]
                                 aug_vec[enemy_idx] -= victor * enemy_cnt
@@ -103,7 +104,7 @@ def main():
 
     df.to_csv("csv/multiOperationMatch_act3enemyduel_01b.csv", index=False)
 
-    df_aug = pd.DataFrame(aug_vec_list, columns=column_name_lst)
+    df_aug = pd.DataFrame(aug_vec_list, columns=column_name_lst + ["group_id"])
 
     df_aug.to_csv("csv/multiOperationMatch_act3enemyduel_01b_aug.csv", index=False)
 
