@@ -8,7 +8,7 @@ import numpy as np
 
 @lru_cache
 def get_model():
-    model = lgb.Booster(model_file="src/openbachelori/models/baseline_lgb/model.txt")
+    model = lgb.Booster(model_file="models/multiOperationMatch_act3enemyduel_01b.txt")
     return model
 
 

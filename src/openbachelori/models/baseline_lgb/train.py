@@ -69,11 +69,11 @@ def main():
     )
     clf.fit(X_train, y_train)
 
-    with open("src/openbachelori/models/baseline_lgb/metrics.txt", "w") as f:
+    with open("models/multiOperationMatch_act3enemyduel_01b_metrics.txt", "w") as f:
         print_metrics("train", clf, X_train, y_train, f)
         print_metrics("test", clf, X_test, y_test, f)
 
-    clf.booster_.save_model("src/openbachelori/models/baseline_lgb/model.txt")
+    clf.booster_.save_model("models/multiOperationMatch_act3enemyduel_01b.txt")
 
 
 if __name__ == "__main__":
