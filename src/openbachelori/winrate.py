@@ -1,3 +1,6 @@
+from functools import lru_cache
+import json
+
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -10,6 +13,21 @@ class Enemy:
     num_appearance: int = 0
     num_win: int = 0
     win_rate: float = 0
+
+
+@lru_cache
+def get_enemy_id_dict() -> dict[str, str]:
+    enemy_id_dict: dict[str, str] = {}
+
+    with open("res/excel/activity_table.json", encoding="utf-8") as f:
+        activity_table = json.load(f)
+
+    for enemy_id, enemy_obj in activity_table["activity"]["ENEMY_DUEL"][
+        "act3enemyduel"
+    ]["enemyData"].items():
+        enemy_id_dict[enemy_id] = enemy_obj["originalEnemyId"]
+
+    return enemy_id_dict
 
 
 def column_is_enemy_id(column_name: str) -> bool:
@@ -48,12 +66,17 @@ def main():
 
     enemy_lst.sort(key=lambda x: x.win_rate, reverse=True)
 
+    enemy_id_dict = get_enemy_id_dict()
+
     result_row_lst = []
 
     for enemy_obj in enemy_lst:
+        orig_enemy_id = enemy_id_dict[enemy_obj.enemy_id]
+
         result_row_lst.append(
             [
                 enemy_obj.enemy_id,
+                orig_enemy_id,
                 enemy_obj.num_appearance,
                 enemy_obj.num_win,
                 enemy_obj.win_rate,
@@ -62,7 +85,13 @@ def main():
 
     result_df = pd.DataFrame(
         result_row_lst,
-        columns=["Enemy ID", "Num of Appearances", "Num of Wins", "Win Rate"],
+        columns=[
+            "Enemy ID",
+            "Original Enemy ID",
+            "Num of Appearances",
+            "Num of Wins",
+            "Win Rate",
+        ],
     )
 
     Path("winrate/multiOperationMatch_act3enemyduel_01b.md").write_text(

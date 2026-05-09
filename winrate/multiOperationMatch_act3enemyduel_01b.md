@@ -1,69 +1,69 @@
-| Enemy ID            |   Num of Appearances |   Num of Wins |   Win Rate |
-|:--------------------|---------------------:|--------------:|-----------:|
-| enemy_15072_dqlbgg  |                  143 |           129 |   0.902098 |
-| enemy_15070_dqhlgy  |                  143 |           129 |   0.902098 |
-| enemy_15071_dqyrzf  |                  143 |           129 |   0.902098 |
-| enemy_15073_dqkght  |                  142 |           124 |   0.873239 |
-| enemy_15074_dqdght  |                  142 |           124 |   0.873239 |
-| enemy_15069_dqdeer  |                   31 |            24 |   0.774194 |
-| enemy_15048_dqdivi  |                 2707 |          2084 |   0.769856 |
-| enemy_15068_dqsui   |                   29 |            22 |   0.758621 |
-| enemy_15052_dqboar  |                 1305 |           878 |   0.672797 |
-| enemy_15018_dqskzc  |                 2830 |          1861 |   0.657597 |
-| enemy_5035_dqveng_2 |                 2770 |          1811 |   0.653791 |
-| enemy_15040_dqrdmn  |                 2855 |          1837 |   0.643433 |
-| enemy_15093_dqzfkl  |                   75 |            47 |   0.626667 |
-| enemy_15078_dqcjld  |                 1344 |           839 |   0.624256 |
-| enemy_15021_dqdurg  |                 2722 |          1649 |   0.605805 |
-| enemy_5036_dqger_2  |                 2792 |          1688 |   0.604585 |
-| enemy_15083_dqymot  |                 2829 |          1707 |   0.603393 |
-| enemy_15085_dqji    |                 2717 |          1637 |   0.602503 |
-| enemy_15009_dqmgcs  |                 2807 |          1685 |   0.600285 |
-| enemy_15092_dqudg   |                 1365 |           818 |   0.599267 |
-| enemy_15023_dqwlfm  |                  327 |           194 |   0.593272 |
-| enemy_15082_dqklr   |                 1748 |          1033 |   0.590961 |
-| enemy_5048_dqingd   |                 2707 |          1594 |   0.588844 |
-| enemy_15033_dqclif  |                  332 |           195 |   0.587349 |
-| enemy_15013_dqsnsl  |                 2745 |          1594 |   0.580692 |
-| enemy_15088_dqterm  |                 2663 |          1545 |   0.580173 |
-| enemy_15090_dqacpa  |                 1385 |           797 |   0.575451 |
-| enemy_15029_dqfrtu  |                 2712 |          1531 |   0.564528 |
-| enemy_15030_dqsgpr  |                 2765 |          1544 |   0.558409 |
-| enemy_5033_dqmstr_2 |                 1300 |           717 |   0.551538 |
-| enemy_15008_dqspsb  |                 2748 |          1484 |   0.540029 |
-| enemy_15046_dqxts   |                 1356 |           726 |   0.535398 |
-| enemy_15022_dqhvys  |                 3670 |          1942 |   0.529155 |
-| enemy_5043_dqgscr   |                 2767 |          1428 |   0.516082 |
-| enemy_5053_dqllme   |                 2733 |          1409 |   0.515551 |
-| enemy_5040_dqmage   |                 2792 |          1439 |   0.515401 |
-| enemy_5029_dqslim   |                 2816 |          1449 |   0.51456  |
-| enemy_15077_dqqzts  |                 2609 |          1340 |   0.513607 |
-| enemy_15014_dqmmka  |                 2788 |          1419 |   0.508967 |
-| enemy_5039_dqgint   |                 2686 |          1362 |   0.507074 |
-| enemy_15086_dqcbld  |                 3480 |          1751 |   0.503161 |
-| enemy_15075_dqzklz  |                  149 |            73 |   0.489933 |
-| enemy_15076_dqzmst  |                  149 |            73 |   0.489933 |
-| enemy_15089_dqbgpa  |                 1341 |           645 |   0.480984 |
-| enemy_15079_dqkodo  |                 2816 |          1348 |   0.478693 |
-| enemy_5031_dqrtar_2 |                 2857 |          1358 |   0.475324 |
-| enemy_5037_dqdbox   |                 2769 |          1298 |   0.468761 |
-| enemy_5028_dqlime_2 |                 2802 |          1302 |   0.464668 |
-| enemy_15002_dqwing  |                 2646 |          1228 |   0.464097 |
-| enemy_5032_dqmon    |                  365 |           166 |   0.454795 |
-| enemy_15010_dqcadk  |                 2740 |          1246 |   0.454745 |
-| enemy_15026_dqmtrf  |                 1337 |           604 |   0.451758 |
-| enemy_5038_dqiprr_2 |                 2826 |          1233 |   0.436306 |
-| enemy_15094_dqgent  |                 2793 |          1206 |   0.431794 |
-| enemy_15080_dqgtop  |                 2802 |          1194 |   0.426124 |
-| enemy_5055_dqkill   |                 2760 |          1155 |   0.418478 |
-| enemy_15095_dqams   |                 2830 |          1154 |   0.407774 |
-| enemy_15028_dqmtrb  |                 1370 |           555 |   0.405109 |
-| enemy_15047_dqwlpl  |                 2778 |          1122 |   0.403888 |
-| enemy_15011_dqnhst  |                 1321 |           519 |   0.392884 |
-| enemy_5042_dqkght_2 |                 2696 |          1033 |   0.38316  |
-| enemy_15084_dqhfly  |                 2733 |           962 |   0.351994 |
-| enemy_15004_dqdhdt  |                 1379 |           454 |   0.329224 |
-| enemy_15015_dqmerr  |                 2873 |           913 |   0.317786 |
-| enemy_15091_dqbus   |                 2732 |           779 |   0.285139 |
-| enemy_15081_dqmage  |                 2792 |           731 |   0.261819 |
-| enemy_5052_dqsbr    |                 2695 |           659 |   0.244527 |
+| Enemy ID            | Original Enemy ID    |   Num of Appearances |   Num of Wins |   Win Rate |
+|:--------------------|:---------------------|---------------------:|--------------:|-----------:|
+| enemy_15072_dqlbgg  | enemy_2114_dylbgg    |                  143 |           129 |   0.902098 |
+| enemy_15070_dqhlgy  | enemy_2112_dyhlgy    |                  143 |           129 |   0.902098 |
+| enemy_15071_dqyrzf  | enemy_2110_dyyrzf    |                  143 |           129 |   0.902098 |
+| enemy_15073_dqkght  | enemy_1513_dekght    |                  142 |           124 |   0.873239 |
+| enemy_15074_dqdght  | enemy_1513_dekght_2  |                  142 |           124 |   0.873239 |
+| enemy_15069_dqdeer  | enemy_2054_smdeer    |                   31 |            24 |   0.774194 |
+| enemy_15048_dqdivi  | enemy_1436_dsdivi    |                 2707 |          2084 |   0.769856 |
+| enemy_15068_dqsui   | enemy_1526_sfsui     |                   29 |            22 |   0.758621 |
+| enemy_15052_dqboar  | enemy_1309_mhboar    |                 1305 |           878 |   0.672797 |
+| enemy_15018_dqskzc  | enemy_2067_skzcy     |                 2830 |          1861 |   0.657597 |
+| enemy_5035_dqveng_2 | enemy_1025_reveng_2  |                 2770 |          1811 |   0.653791 |
+| enemy_15040_dqrdmn  | enemy_1114_rgrdmn_2  |                 2855 |          1837 |   0.643433 |
+| enemy_15093_dqzfkl  | enemy_2099_skzfkl    |                   75 |            47 |   0.626667 |
+| enemy_15078_dqcjld  | enemy_10052_cjshld   |                 1344 |           839 |   0.624256 |
+| enemy_15021_dqdurg  | enemy_1264_durgrd_2  |                 2722 |          1649 |   0.605805 |
+| enemy_5036_dqger_2  | enemy_1062_rager_2   |                 2792 |          1688 |   0.604585 |
+| enemy_15083_dqymot  | enemy_1163_hvymot    |                 2829 |          1707 |   0.603393 |
+| enemy_15085_dqji    | enemy_1207_sfji      |                 2717 |          1637 |   0.602503 |
+| enemy_15009_dqmgcs  | enemy_1350_mgcshp    |                 2807 |          1685 |   0.600285 |
+| enemy_15092_dqudg   | enemy_2026_syudg     |                 1365 |           818 |   0.599267 |
+| enemy_15023_dqwlfm  | enemy_1535_wlfmster  |                  327 |           194 |   0.593272 |
+| enemy_15082_dqklr   | enemy_1129_spklr     |                 1748 |          1033 |   0.590961 |
+| enemy_5048_dqingd   | enemy_7002_veingd    |                 2707 |          1594 |   0.588844 |
+| enemy_15033_dqclif  | enemy_7015_xbcrab2   |                  332 |           195 |   0.587349 |
+| enemy_15013_dqsnsl  | enemy_1067_snslime   |                 2745 |          1594 |   0.580692 |
+| enemy_15088_dqterm  | enemy_1332_cbterm    |                 2663 |          1545 |   0.580173 |
+| enemy_15090_dqacpa  | enemy_1256_lyacpa    |                 1385 |           797 |   0.575451 |
+| enemy_15029_dqfrtu  | enemy_1134_diamd     |                 2712 |          1531 |   0.564528 |
+| enemy_15030_dqsgpr  | enemy_1153_dsexcu_2  |                 2765 |          1544 |   0.558409 |
+| enemy_5033_dqmstr_2 | enemy_1044_zomstr_2  |                 1300 |           717 |   0.551538 |
+| enemy_15008_dqspsb  | enemy_1123_spsbr     |                 2748 |          1484 |   0.540029 |
+| enemy_15046_dqxts   | enemy_1395_dhxts     |                 1356 |           726 |   0.535398 |
+| enemy_15022_dqhvys  | enemy_1160_hvyslr    |                 3670 |          1942 |   0.529155 |
+| enemy_5043_dqgscr   | enemy_1192_krgscr    |                 2767 |          1428 |   0.516082 |
+| enemy_5053_dqllme   | enemy_1050_lslime    |                 2733 |          1409 |   0.515551 |
+| enemy_5040_dqmage   | enemy_1241_ltmage    |                 2792 |          1439 |   0.515401 |
+| enemy_5029_dqslim   | enemy_1305_mhslim    |                 2816 |          1449 |   0.51456  |
+| enemy_15077_dqqzts  | enemy_1394_dhzts     |                 2609 |          1340 |   0.513607 |
+| enemy_15014_dqmmka  | enemy_1415_mmkabi    |                 2788 |          1419 |   0.508967 |
+| enemy_5039_dqgint   | enemy_1092_mdgint    |                 2686 |          1362 |   0.507074 |
+| enemy_15086_dqcbld  | enemy_1329_cbshld    |                 3480 |          1751 |   0.503161 |
+| enemy_15075_dqzklz  | enemy_2076_skzklz    |                  149 |            73 |   0.489933 |
+| enemy_15076_dqzmst  | enemy_2078_skzmst    |                  149 |            73 |   0.489933 |
+| enemy_15089_dqbgpa  | enemy_1255_lybgpa    |                 1341 |           645 |   0.480984 |
+| enemy_15079_dqkodo  | enemy_1271_nhkodo    |                 2816 |          1348 |   0.478693 |
+| enemy_5031_dqrtar_2 | enemy_1024_mortar_2  |                 2857 |          1358 |   0.475324 |
+| enemy_5037_dqdbox   | enemy_1118_lidbox    |                 2769 |          1298 |   0.468761 |
+| enemy_5028_dqlime_2 | enemy_1004_mslime_2  |                 2802 |          1302 |   0.464668 |
+| enemy_15002_dqwing  | enemy_1388_wingnt    |                 2646 |          1228 |   0.464097 |
+| enemy_5032_dqmon    | enemy_1010_demon     |                  365 |           166 |   0.454795 |
+| enemy_15010_dqcadk  | enemy_1184_cadkgt    |                 2740 |          1246 |   0.454745 |
+| enemy_15026_dqmtrf  | enemy_1035_haxe_2    |                 1337 |           604 |   0.451758 |
+| enemy_5038_dqiprr_2 | enemy_1117_liiprr_2  |                 2826 |          1233 |   0.436306 |
+| enemy_15094_dqgent  | enemy_1047_sagent    |                 2793 |          1206 |   0.431794 |
+| enemy_15080_dqgtop  | enemy_10116_ymgtop   |                 2802 |          1194 |   0.426124 |
+| enemy_5055_dqkill   | enemy_1516_jakill    |                 2760 |          1155 |   0.418478 |
+| enemy_15095_dqams   | enemy_2093_skzams    |                 2830 |          1154 |   0.407774 |
+| enemy_15028_dqmtrb  | enemy_1097_cclmbjk_2 |                 1370 |           555 |   0.405109 |
+| enemy_15047_dqwlpl  | enemy_10003_trwlpl_2 |                 2778 |          1122 |   0.403888 |
+| enemy_15011_dqnhst  | enemy_1270_nhstlk    |                 1321 |           519 |   0.392884 |
+| enemy_5042_dqkght_2 | enemy_1103_wdkght_2  |                 2696 |          1033 |   0.38316  |
+| enemy_15084_dqhfly  | enemy_1269_nhfly     |                 2733 |           962 |   0.351994 |
+| enemy_15004_dqdhdt  | enemy_1396_dhdts     |                 1379 |           454 |   0.329224 |
+| enemy_15015_dqmerr  | enemy_1143_merrpg    |                 2873 |           913 |   0.317786 |
+| enemy_15091_dqbus   | enemy_1263_durbus    |                 2732 |           779 |   0.285139 |
+| enemy_15081_dqmage  | enemy_1128_spmage    |                 2792 |           731 |   0.261819 |
+| enemy_5052_dqsbr    | enemy_2043_smsbr     |                 2695 |           659 |   0.244527 |
