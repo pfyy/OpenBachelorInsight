@@ -15,17 +15,35 @@ class Enemy:
     win_rate: float = 0
 
 
+@dataclass
+class EnemyMeta:
+    enemy_id: str
+    orig_enemy_id: str
+    enemy_name: str
+
+
 @lru_cache
-def get_enemy_id_dict() -> dict[str, str]:
+def get_enemy_id_dict() -> dict[str, EnemyMeta]:
     enemy_id_dict: dict[str, str] = {}
 
     with open("res/excel/activity_table.json", encoding="utf-8") as f:
         activity_table = json.load(f)
 
+    with open("res/excel/enemy_handbook_table.json", encoding="utf-8") as f:
+        enemy_handbook_table = json.load(f)
+
     for enemy_id, enemy_obj in activity_table["activity"]["ENEMY_DUEL"][
         "act3enemyduel"
     ]["enemyData"].items():
-        enemy_id_dict[enemy_id] = enemy_obj["originalEnemyId"]
+        orig_enemy_id = enemy_obj["originalEnemyId"]
+
+        enemy_name = enemy_handbook_table["enemyData"][orig_enemy_id]["name"]
+
+        enemy_id_dict[enemy_id] = EnemyMeta(
+            enemy_id=enemy_id,
+            orig_enemy_id=orig_enemy_id,
+            enemy_name=enemy_name,
+        )
 
     return enemy_id_dict
 
@@ -71,12 +89,13 @@ def main():
     result_row_lst = []
 
     for enemy_obj in enemy_lst:
-        orig_enemy_id = enemy_id_dict[enemy_obj.enemy_id]
+        enemy_meta = enemy_id_dict[enemy_obj.enemy_id]
 
         result_row_lst.append(
             [
                 enemy_obj.enemy_id,
-                orig_enemy_id,
+                enemy_meta.orig_enemy_id,
+                enemy_meta.enemy_name,
                 enemy_obj.num_appearance,
                 enemy_obj.num_win,
                 enemy_obj.win_rate,
@@ -88,6 +107,7 @@ def main():
         columns=[
             "Enemy ID",
             "Original Enemy ID",
+            "Enemy Name",
             "Num of Appearances",
             "Num of Wins",
             "Win Rate",
@@ -95,7 +115,8 @@ def main():
     )
 
     Path("winrate/multiOperationMatch_act3enemyduel_01b.md").write_text(
-        result_df.to_markdown(index=False)
+        result_df.to_markdown(index=False),
+        encoding="utf-8",
     )
 
 
