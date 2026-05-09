@@ -96,7 +96,7 @@ def main():
                 enemy_obj.enemy_id,
                 enemy_meta.orig_enemy_id,
                 enemy_meta.enemy_name,
-                f"![{enemy_meta.orig_enemy_id}](pic/{enemy_meta.orig_enemy_id}.png)",
+                f"![{enemy_meta.orig_enemy_id}](../pic/{enemy_meta.orig_enemy_id}.png)",
                 enemy_obj.num_appearance,
                 enemy_obj.num_win,
                 enemy_obj.win_rate,
