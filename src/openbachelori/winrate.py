@@ -23,8 +23,8 @@ class EnemyMeta:
 
 
 @lru_cache
-def get_enemy_id_dict() -> dict[str, EnemyMeta]:
-    enemy_id_dict: dict[str, str] = {}
+def get_enemy_id_meta_dict() -> dict[str, EnemyMeta]:
+    enemy_id_meta_dict: dict[str, EnemyMeta] = {}
 
     with open("res/excel/activity_table.json", encoding="utf-8") as f:
         activity_table = json.load(f)
@@ -39,13 +39,13 @@ def get_enemy_id_dict() -> dict[str, EnemyMeta]:
 
         enemy_name = enemy_handbook_table["enemyData"][orig_enemy_id]["name"]
 
-        enemy_id_dict[enemy_id] = EnemyMeta(
+        enemy_id_meta_dict[enemy_id] = EnemyMeta(
             enemy_id=enemy_id,
             orig_enemy_id=orig_enemy_id,
             enemy_name=enemy_name,
         )
 
-    return enemy_id_dict
+    return enemy_id_meta_dict
 
 
 def column_is_enemy_id(column_name: str) -> bool:
@@ -84,12 +84,12 @@ def main():
 
     enemy_lst.sort(key=lambda x: x.win_rate, reverse=True)
 
-    enemy_id_dict = get_enemy_id_dict()
+    enemy_id_meta_dict = get_enemy_id_meta_dict()
 
     result_row_lst = []
 
     for enemy_obj in enemy_lst:
-        enemy_meta = enemy_id_dict[enemy_obj.enemy_id]
+        enemy_meta = enemy_id_meta_dict[enemy_obj.enemy_id]
 
         result_row_lst.append(
             [
